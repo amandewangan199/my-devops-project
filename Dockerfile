@@ -1,5 +1,5 @@
-# Use Nginx (a lightweight web server)
 FROM nginx:alpine
 
-# Copy our html file to the Nginx folder inside the container
-COPY index.html /usr/share/nginx/html/index.html
+# OLD LINE: COPY index.html /usr/share/nginx/html/index.html
+# NEW LINE: Copy EVERYTHING (.) to the nginx folder
+COPY . /usr/share/nginx/html/
