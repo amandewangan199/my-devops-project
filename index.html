@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Final Project v3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Pipeline Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>CI/CD Pipeline Project</h1>
-    <p id="demo-text">Click the button to test JavaScript</p>
-    
-    <button onclick="changeColor()">Click Me!</button>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-server"></i> CI/CD Pipeline Status</h1>
+            <p>Deployed via Jenkins & Docker on WSL 2</p>
+        </header>
 
+        <div class="status-grid">
+            <div class="card">
+                <h3>Server Status</h3>
+                <div class="status-indicator online">
+                    <span class="dot"></span> Online
+                </div>
+                <p class="detail">Nginx Container Active</p>
+            </div>
+
+            <div class="card">
+                <h3>System Uptime</h3>
+                <h2 id="uptime">00:00:00</h2>
+                <p class="detail">Since last deployment</p>
+            </div>
+
+            <div class="card">
+                <h3>Current Version</h3>
+                <h2 class="version">v2.1.0</h2>
+                <p class="detail">Build #45 (Stable)</p>
+            </div>
+
+            <div class="card interaction">
+                <h3>System Check</h3>
+                <button onclick="runDiagnostics()" id="diag-btn">Run Diagnostics</button>
+                <p id="diag-result" class="detail">Waiting for input...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Project by <strong>Your Name</strong> | Final Year Submission</p>
+            <p id="timestamp"></p>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
